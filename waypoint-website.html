@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Waypoint Compliance Advisory - Veteran-owned cybersecurity consulting specializing in CMMC, FedRAMP, and RMF compliance for federal contractors and government agencies">
+    <meta name="keywords" content="CMMC, FedRAMP, RMF, cybersecurity, compliance, federal contractor, SDVOSB">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Waypoint Compliance Advisory | Federal Cybersecurity Consulting">
+    <meta property="og:description" content="Navigate federal compliance with confidence. SDVOSB cybersecurity consulting.">
+    <meta property="og:url" content="https://waypointca.com">
+    <meta property="og:type" content="website">
+    
+    <title>Waypoint Compliance Advisory | Federal Cybersecurity Consulting | SDVOSB</title>
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-navy: #1a2b4c;
+            --secondary-blue: #2e5090;
+            --accent-orange: #e67e22;
+            --light-gray: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #5a6c7d;
+            --white: #ffffff;
+            --success: #27ae60;
+            --border-light: #e1e8ed;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo::before {
+            content: "◆";
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-blue);
+        }
+        
+        .nav-cta {
+            background-color: var(--accent-orange);
+            color: var(--white) !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background-color: #d35400;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-navy);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 73px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .badge {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background-color: var(--light-gray);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .about-text h3 {
+            color: var(--primary-navy);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .credentials {
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .credential-list {
+            list-style: none;
+        }
+        
+        .credential-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .credential-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .credential-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0f1a2e;
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="/" class="logo">WaypointCA</a>
+            <button class="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="mailto:info@waypointca.com" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="main">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Navigate Federal Compliance with Confidence</h1>
+                <p>Veteran-owned cybersecurity consulting specializing in CMMC, FedRAMP, and RMF compliance for federal contractors and government agencies.</p>
+                <div class="hero-badges">
+                    <span class="badge">SDVOSB Certified</span>
+                    <span class="badge">CISSP</span>
+                    <span class="badge">Federal Experience</span>
+                    <span class="badge">Active Public Trust</span>
+                </div>
+                <a href="#contact" class="cta-button">Schedule Consultation</a>
+            </div>
+        </section>
+        
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive cybersecurity compliance solutions tailored for federal requirements</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>CMMC Assessment</h3>
+                        <p>Complete readiness assessments and gap analysis for DoD contractors pursuing CMMC certification. We guide you through every control requirement.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">☁️</div>
+                        <h3>FedRAMP Advisory</h3>
+                        <p>Expert guidance through the FedRAMP authorization process with proven federal experience and deep understanding of cloud security requirements.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔒</div>
+                        <h3>RMF Implementation</h3>
+                        <p>Full lifecycle Risk Management Framework support for federal systems, from categorization through continuous monitoring.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3>AI Security Audits</h3>
+                        <p>Specialized security assessments for AI/ML systems in federal environments, ensuring ethical and secure AI deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Waypoint</h2>
+                    <p>Your trusted partner in navigating complex federal compliance requirements</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Experience That Matters</h3>
+                        <p>With over 20 years of cybersecurity experience and direct federal contract work with agencies like HHS OIG and USCIS, we understand the unique challenges of government compliance.</p>
+                        <p>As a Service-Disabled Veteran-Owned Small Business (SDVOSB), we bring military precision and dedication to every engagement, ensuring your organization meets and exceeds federal security requirements.</p>
+                        <p>Our expertise spans the full spectrum of federal compliance frameworks, from NIST 800-53 controls to cloud security architectures.</p>
+                    </div>
+                    <div class="credentials">
+                        <h4>Our Credentials</h4>
+                        <ul class="credential-list">
+                            <li>Service-Disabled Veteran-Owned (SDVOSB)</li>
+                            <li>CISSP, CEH, CHFI Certified</li>
+                            <li>Active Public Trust Clearance</li>
+                            <li>MS Cybersecurity & Information Assurance</li>
+                            <li>Direct Federal Contract Experience</li>
+                            <li>FedRAMP & RMF Implementation Expert</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Ready to Achieve Compliance?</h2>
+                <p>Let's discuss how we can help secure your federal contracts</p>
+                <a href="mailto:info@waypointca.com" class="cta-button">Contact Us Today</a>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@waypointca.com">info@waypointca.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Location:</strong><br>
+                        Greater Orlando Area, Florida
+                    </div>
+                    <div class="contact-item">
+                        <strong>CAGE Code:</strong><br>
+                        Pending
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Waypoint Compliance Advisory, LLC. All rights reserved.</p>
+            <p>Service-Disabled Veteran-Owned Small Business | Committed to Excellence in Federal Cybersecurity</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const isExpanded = navLinks.classList.contains('active');
+                mobileMenu.setAttribute('aria-expanded', isExpanded);
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenu.setAttribute('aria-expanded', 'false');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Console security message
+        console.log('%cSecurity Notice', 'color: #e67e22; font-size: 20px; font-weight: bold;');
+        console.log('This is a protected system. Authorized use only.');
+        console.log('For security assessments, please contact: security@waypointca.com');
+    </script>
+</body>
+</html>
